@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Selection Sort</title>
+    <style>
+                    
+            .header {
+                margin-top: 20px;
+                margin-right: 5vw;
+                margin-left: 5vw;
+                text-align: center;
+                text-align: center;
+                font-size: 30px;
+                background-color: #0faabf;
+                color: white;
+                border-radius:19px;
+                font-weight: bolder;
+            }
+                
+            #array {
+                width: 600px;
+                height: 364px;
+                position: relative;
+                margin: 0 auto;
+            }
+                
+            .block {
+                width: 28px;
+                background-color: #1870b4;
+                position: absolute;
+                bottom: 0px;
+                transition: 0.2s all ease;
+            }
+                
+            .block_id {
+                position: absolute;
+                color: white;
+                margin-top: -20px;
+                width: 100%;
+                text-align: left;
+            }
+            .bt{
+                padding: 12px;
+                font-weight: bolder; 
+                background-color:#1870b4; 
+                border-radius: 10px; 
+                color: white; 
+                font-size: 16px; 
+                margin-top: 1vw;
+                margin-right: 1vw;
+                cursor: pointer;
+            }
+            input{
+                color:rgb(0, 0, 0);
+            }
+
+            *{
+                align-items: center;
+                justify-content: center;
+            }
+            body{
+                background-color: #051622;
+                color: antiquewhite;
+            }
+            .heading{
+                max-width: 100%;
+                max-height: 10px;
+                padding-bottom: 100px;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .back a{
+                    text-decoration: none;
+                    color: #fefefe;
+            }
+            .back{
+                float: right;
+                margin-right: 15px;
+                border-radius: 20px;
+                background-color: #008bf8;
+                color: whitesmoke;
+                border-color: #fefefe;
+            }
+
+            .back:hover{
+                border-color: #008bf8;
+                box-shadow: 4px 4px 4px 4px rgba(255, 255, 255, 0.25);
+            }
+            .complexity{
+                border-style: solid;
+                border-radius: 10%;
+                width: 700px;
+                height: 500px;
+            }
+
+            .complexity p{
+                text-align: center;
+                font-size: 25px;
+            }
+
+            .languages{
+                display: flex;
+            }
+
+            #generateCodeButton{
+                margin-right: 15px;
+                border-radius: 20px;
+                background-color: #008bf8;
+                color: whitesmoke;
+                border-color: #fefefe;
+            }
+
+            #codeblock{
+                float:left;
+                text-align: left;
+                font-size: 20px;
+            }
+
+            .codes{
+                align-items: center;
+                justify-content: center;
+                width: fit-content;
+            }
+
+            .codepart{
+                border-style: solid;
+                border-radius: 10%;
+                width: 700px;
+                height: 650px;
+            }
+
+            @media (max-width: 768px) {
+                .complexity {
+                    font-size: 16px;
+                }
+            }
+
+            .buttons{
+                display: flex;
+            }
+
+            #text{
+                text-align: center;
+                font-size: medium;
+            }
+
+            .visual{
+                border-style: solid;
+                border-radius: 10%;
+                width: 700px;
+                height: 600px;
+                align-items: center;
+            }
+
+            #languagebutton a{
+                text-decoration: none;
+                color: antiquewhite;
+
+            }
+
+            #languagebutton{
+                background-color: #008bf8;
+                border-radius: 20%;
+            }
+            
+    </style>
+</head>
+<body>
+    <h1 style="font-size:60px;text-align: center;">Selection Sort</h1>
+    <br>
+    <button id="languagebutton" style="float: right;"><a href="searchingalgos.html">BACK</a></button>
+    <br>
+    <br>
+    <center>
+        <div class="visual">
+            <div id="array"></div>
+            <br/>
+            <br/>
+            <div style="text-align: center">
+                <br /><br /><br/>
+                <div class="buttons">
+                    <a class="bt" onclick="SelectionSort()">Selection sort</a>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <a class="bt newarray" onclick="location.reload()" >Generate New Array</a> 
+                </div>
+            </div>
+               
+        <br/>
+        <p id="text"></p>
+        </div>
+    </center>
+    
+        <script src="selectionsort.js"></script>
+    </div>
+    <br>
+    <br>
+    <center>
+        <div class="complexity" >
+            <h2 style="text-align: center;font-size: 50px;">complexity Analysis</h2>
+            <p><b>Best-case: </b>The best case occurs when the array is already sorted. So the number of comparisons required is N-1 and the number of swaps required = 0. Hence the best case complexity is O(N)</p>
+            <p><b>Average-case: </b>The number of comparisons is constant in Bubble Sort. So in average case, there are O(N2) comparisons.</p>
+            <p><b>Worst-case: </b>The worst-case condition for bubble sort occurs when elements of the array are arranged in decreasing order. In the worst case, the total number of iterations or passes required to sort a given array is (N-1). where ‘N’ is the number of elements present in the array.</p>
+        </div>
+    </center>
+    <br>
+    <br>
+    <br>
+    <center>
+        <center>
+            <div class="codepart">
+                <div class="code">
+                    <h2 style="text-align: center;font-size: 50px;">code</h2>
+                </div>
+                <div class="selector">
+                    <label for="languageselect">Choose language:</label>
+                    <select id="languageSelect">
+                        <option value="c">C</option>
+                        <option value="cpp">C++</option>
+                        <option value="java">Java</option>
+                        <option value="python">Python</option>
+                    </select>
+                    <button id="generateCodeButton">Generate Code</button>
+                </div> 
+                <div class="codes">
+                    <pre>
+                        <code id="codeblock">
+                            // Code will be generated here
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </center>
+    
+        <script>
+            // Get references to elements
+            const languageSelect = document.getElementById('languageSelect');
+            const generateCodeButton = document.getElementById('generateCodeButton');
+            const codeBlock = document.getElementById('codeblock');
+    
+            // Define code snippets for different languages
+            const codeSnippets = {
+                c: `
+                    void selectionSort(int arr[], int n)
+                    {
+                        int i, j, min_idx;
+                        for (i = 0; i < n-1; i++)
+                        {
+                            min_idx = i;
+                            for (j = i+1; j < n; j++)
+                            if (arr[j] < arr[min_idx])
+                                min_idx = j;
+                            if(min_idx != i)
+                                swap(&arr[min_idx], &arr[i]);
+                        }
+                    }
+                `,
+                cpp: `
+                    void selectionSort(int arr[], int n)
+                    {
+                        int i, j, min_idx;
+                        for (i = 0; i < n - 1; i++) {
+                            min_idx = i;
+                            for (j = i + 1; j < n; j++) {
+                                if (arr[j] < arr[min_idx])
+                                    min_idx = j;
+                            }
+                            if (min_idx != i)
+                                swap(arr[min_idx], arr[i]);
+                        }
+                    }
+                `,
+                java: `
+                    void sort(int arr[])
+                    {
+                        int n = arr.length;
+                        for (int i = 0; i < n-1; i++)
+                        {
+                            int min_idx = i;
+                            for (int j = i+1; j < n; j++)
+                                if (arr[j] < arr[min_idx])
+                                    min_idx = j;
+                            int temp = arr[min_idx];
+                            arr[min_idx] = arr[i];
+                            arr[i] = temp;
+                        }
+                    }
+                `,
+                python: `
+                    def bubbleSort(arr):
+                        n = len(arr)
+                        for i in range(n):
+                            swapped = False
+                            for j in range(0, n-i-1):
+                                if arr[j] > arr[j+1]:
+                                    arr[j], arr[j+1] = arr[j+1], arr[j]
+                                    swapped = True
+                            if (swapped == False):
+                                break
+                `
+            };
+    
+            // Add event listener to generate code when the button is clicked
+            generateCodeButton.addEventListener('click', () => {
+                const selectedLanguage = languageSelect.value;
+                codeBlock.textContent = codeSnippets[selectedLanguage];
+            });
+        </script>
+    </center>
+</body>
+</html>
